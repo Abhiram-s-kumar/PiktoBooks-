@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, Button, Table } from 'react-bootstrap';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import axios from 'axios';
+import API_BASE_URL from '../config/api.js';
 
 function PurchaseDetails() {
   const { id } = useParams();
@@ -17,7 +18,7 @@ function PurchaseDetails() {
   const fetchPurchase = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get(`http://localhost:5000/api/purchases/${id}`, {
+      const response = await axios.get(`${API_BASE_URL}/api/purchases/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setPurchase(response.data);

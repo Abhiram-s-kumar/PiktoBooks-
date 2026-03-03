@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, Button, Table, Form, InputGroup } from 'reac
 import { useParams, useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaEdit, FaTrash, FaPlus, FaMinus } from 'react-icons/fa';
 import axios from 'axios';
+import API_BASE_URL from '../config/api.js';
 import './ItemDetails.css';
 
 function ItemDetails() {
@@ -20,7 +21,7 @@ function ItemDetails() {
   const fetchItem = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get(`http://localhost:5000/api/items/${id}`, {
+      const response = await axios.get(`${API_BASE_URL}/api/items/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setItem(response.data);
@@ -53,7 +54,7 @@ function ItemDetails() {
         return;
       }
 
-      await axios.put(`http://localhost:5000/api/items/${id}`, 
+      await axios.put(`${API_BASE_URL}/api/items/${id}`, 
         { inStock: newStock },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -70,7 +71,7 @@ function ItemDetails() {
     if (window.confirm('Are you sure you want to delete this item?')) {
       try {
         const token = localStorage.getItem('token');
-        await axios.delete(`http://localhost:5000/api/items/${id}`, {
+        await axios.delete(`${API_BASE_URL}/api/items/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         navigate('/inventory');

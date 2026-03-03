@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, Form, Button, Alert } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import axios from 'axios';
+import API_BASE_URL from '../config/api.js';
 import './AddItem.css';
 
 function AddItem() {
@@ -35,7 +36,7 @@ function AddItem() {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:5000/api/items', formData, {
+      await axios.post(`${API_BASE_URL}/api/items`, formData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       navigate('/inventory');

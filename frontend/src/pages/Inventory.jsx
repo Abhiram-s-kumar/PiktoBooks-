@@ -3,6 +3,7 @@ import { Container, Table, Button, Badge } from 'react-bootstrap';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import API_BASE_URL from '../config/api.js';
 import './Dashboard.css';
 
 function Inventory() {
@@ -16,7 +17,7 @@ function Inventory() {
   const fetchItems = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/items', {
+      const response = await axios.get(`${API_BASE_URL}/api/items`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setItems(response.data);

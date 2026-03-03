@@ -3,6 +3,7 @@ import { Container, Table, Button, Badge } from 'react-bootstrap';
 import { FaPlus, FaEye } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import API_BASE_URL from '../config/api.js';
 import './Dashboard.css';
 
 function Purchase() {
@@ -16,7 +17,7 @@ function Purchase() {
   const fetchPurchases = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/purchases', {
+      const response = await axios.get(`${API_BASE_URL}/api/purchases`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setPurchases(response.data);

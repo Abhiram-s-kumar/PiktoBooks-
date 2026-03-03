@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
+import API_BASE_URL from '../config/api.js';
 import './Dashboard.css';
 
 function Dashboard() {
@@ -35,8 +36,8 @@ function Dashboard() {
         
         // Fetch both stats and daybook in parallel
         const [statsResponse, daybookResponse] = await Promise.all([
-          axios.get('http://localhost:5000/api/reports/dashboard', { headers }),
-          axios.get(`http://localhost:5000/api/reports/daybook?date=${selectedDate}`, { headers })
+          axios.get(`${API_BASE_URL}/api/reports/dashboard`, { headers }),
+          axios.get(`${API_BASE_URL}/api/reports/daybook?date=${selectedDate}`, { headers })
         ]);
         
         setStats(statsResponse.data);

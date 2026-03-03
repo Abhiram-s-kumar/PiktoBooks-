@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Form, Table, Tabs, Tab } from 'react-bootstrap';
 import axios from 'axios';
+import API_BASE_URL from '../config/api.js';
 import './Dashboard.css';
 
 function Report() {
@@ -28,7 +29,7 @@ function Report() {
       const headers = { Authorization: `Bearer ${token}` };
       
       const response = await axios.get(
-        `http://localhost:5000/api/reports/${activeTab}?startDate=${dateRange.startDate}&endDate=${dateRange.endDate}`,
+        `${API_BASE_URL}/api/reports/${activeTab}?startDate=${dateRange.startDate}&endDate=${dateRange.endDate}`,
         { headers }
       );
       

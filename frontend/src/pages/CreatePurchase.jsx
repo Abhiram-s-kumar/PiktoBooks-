@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, Form, Button, Table, Alert } from 'react-boo
 import { useNavigate } from 'react-router-dom';
 import { FaPlus, FaTrash, FaArrowLeft } from 'react-icons/fa';
 import axios from 'axios';
+import API_BASE_URL from '../config/api.js';
 
 function CreatePurchase() {
   const navigate = useNavigate();
@@ -31,7 +32,7 @@ function CreatePurchase() {
   const fetchItems = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/items', {
+      const response = await axios.get(`${API_BASE_URL}/api/items`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setItems(response.data);
@@ -101,7 +102,7 @@ function CreatePurchase() {
         totalAmount: calculateTotal()
       };
 
-      await axios.post('http://localhost:5000/api/purchases', purchaseData, {
+      await axios.post(`${API_BASE_URL}/api/purchases`, purchaseData, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
