@@ -1,0 +1,87 @@
+.page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-gray);
+  text-decoration: none;
+  padding: 0;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.back-btn:hover {
+  color: var(--primary-purple);
+}
+
+.add-item-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.add-item-card .card-body {
+  padding: 40px;
+}
+
+.add-item-card .form-label {
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.add-item-card .form-control {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.add-item-card .form-control:focus {
+  border-color: var(--primary-purple);
+  box-shadow: 0 0 0 3px rgba(108, 93, 211, 0.1);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border-color);
+}
+
+.form-actions .btn {
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.form-actions .btn-primary {
+  background: var(--primary-purple);
+  border: none;
+}
+
+.form-actions .btn-primary:hover {
+  background: #5a4bc4;
+}
+
+.form-actions .btn-outline-secondary {
+  border-color: var(--border-color);
+  color: var(--text-gray);
+}
+
+.form-actions .btn-outline-secondary:hover {
+  background: #f9fafb;
+  border-color: var(--border-color);
+  color: var(--text-dark);
+}

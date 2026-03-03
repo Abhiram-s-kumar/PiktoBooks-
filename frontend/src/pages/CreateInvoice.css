@@ -1,0 +1,224 @@
+.invoice-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.invoice-card .card-body {
+  padding: 30px;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--light-purple);
+}
+
+.invoice-card .form-label {
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.invoice-card .form-control,
+.invoice-card .form-select {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+.invoice-card .form-control:focus,
+.invoice-card .form-select:focus {
+  border-color: var(--primary-purple);
+  box-shadow: 0 0 0 3px rgba(108, 93, 211, 0.1);
+}
+
+/* Enhanced dropdown styling for stock information */
+.form-select option {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.form-select option:disabled {
+  background-color: #f8f9fa;
+  color: #dc3545;
+  font-style: italic;
+}
+
+/* Stock status indicators */
+.stock-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.stock-indicator.in-stock {
+  background-color: #198754;
+}
+
+.stock-indicator.low-stock {
+  background-color: #fd7e14;
+}
+
+.stock-indicator.out-of-stock {
+  background-color: #dc3545;
+}
+
+.items-table {
+  margin-top: 15px;
+}
+
+.items-table table {
+  margin-bottom: 15px;
+}
+
+.items-table thead th {
+  background: var(--light-purple);
+  color: var(--primary-purple);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 12px;
+  border: none;
+}
+
+.items-table tbody td {
+  padding: 12px;
+  vertical-align: middle;
+}
+
+.total-display {
+  font-weight: 600;
+  color: var(--text-dark);
+  padding: 10px;
+}
+
+.remove-btn {
+  color: var(--danger-red);
+  padding: 8px;
+  text-decoration: none;
+}
+
+.remove-btn:hover {
+  color: #dc2626;
+}
+
+.remove-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.add-item-btn {
+  border: 2px dashed var(--primary-purple);
+  color: var(--primary-purple);
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.add-item-btn:hover {
+  background: var(--light-purple);
+  border-color: var(--primary-purple);
+  color: var(--primary-purple);
+}
+
+.payment-methods {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.payment-option {
+  flex: 1;
+  min-width: 80px;
+}
+
+.payment-option .form-check-input {
+  margin-top: 0.15em;
+}
+
+.payment-option .form-check-label {
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.summary-card {
+  position: sticky;
+  top: 20px;
+}
+
+.summary-section {
+  background: var(--light-purple);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+.summary-row.total-row {
+  border-top: 2px solid var(--primary-purple);
+  margin-top: 10px;
+  padding-top: 15px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.action-buttons {
+  margin-top: 20px;
+}
+
+.action-buttons .btn {
+  padding: 12px;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+.action-buttons .btn-primary {
+  background: var(--primary-purple);
+  border: none;
+}
+
+.action-buttons .btn-primary:hover {
+  background: #5a4bc4;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-gray);
+  text-decoration: none;
+  padding: 0;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.back-btn:hover {
+  color: var(--primary-purple);
+}
+
+@media (max-width: 991px) {
+  .summary-card {
+    position: relative;
+    top: 0;
+  }
+}

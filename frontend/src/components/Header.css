@@ -1,0 +1,55 @@
+.header-navbar {
+  background: white;
+  border-bottom: 1px solid var(--border-color);
+  padding: 15px 0;
+  margin-bottom: 30px;
+}
+
+.page-title {
+  color: var(--text-dark);
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.user-dropdown {
+  text-decoration: none;
+  padding: 0;
+}
+
+.user-dropdown::after {
+  display: none;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+}
+
+.user-details {
+  text-align: left;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.user-role {
+  font-size: 12px;
+  color: var(--text-gray);
+}

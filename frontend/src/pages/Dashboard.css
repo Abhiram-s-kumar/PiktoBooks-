@@ -1,0 +1,307 @@
+.page-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 100%;
+  min-height: 40px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.action-btn.btn-primary {
+  background: var(--primary-purple);
+  border: none;
+}
+
+.stat-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+  height: 120px;
+  display: flex;
+  align-items: center;
+}
+
+.stat-card .card-body {
+  width: 100%;
+  padding: 20px;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+}
+
+.stats-row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.dropdown-toggle.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.dropdown-menu {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+.dropdown-item:hover {
+  background-color: var(--light-purple);
+  color: var(--primary-purple);
+}
+
+.profit-card {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+}
+
+.profit-card .stat-label,
+.profit-card .stat-value {
+  color: white;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--text-gray);
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.stat-change {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.stat-change.positive {
+  color: var(--success-green);
+}
+
+.stat-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.stat-badge.danger {
+  background: #FEE2E2;
+  color: var(--danger-red);
+}
+
+.inventory-table {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.table-header {
+  background: #F5F3FF;
+  font-weight: 600;
+  color: #6C5DD3;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.stock-low {
+  color: var(--danger-red);
+}
+
+.stock-warning {
+  color: var(--warning-orange);
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.quantity-input {
+  width: 50px;
+  text-align: center;
+  border: none;
+  font-weight: 500;
+}
+
+.daybook-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+}
+
+.daybook-card .card-body {
+  padding: 30px;
+}
+
+.daybook-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.daybook-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.date-picker {
+  width: auto;
+  max-width: 200px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.date-picker:focus {
+  border-color: var(--primary-purple);
+  box-shadow: 0 0 0 3px rgba(108, 93, 211, 0.1);
+}
+
+.daybook-table-wrapper {
+  overflow-x: auto;
+}
+
+.daybook-table {
+  margin-bottom: 0;
+  font-size: 14px;
+  border-color: #E4E4E7 !important;
+}
+
+.daybook-table thead th {
+  background: #F5F3FF;
+  color: #6C5DD3;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 14px 12px;
+  border-color: #E4E4E7 !important;
+  white-space: nowrap;
+}
+
+.daybook-table tbody td {
+  padding: 14px 12px;
+  vertical-align: middle;
+  color: var(--text-dark);
+  border-color: #E4E4E7 !important;
+}
+
+.daybook-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.opening-balance-row {
+  background: #fef3c7 !important;
+  font-weight: 600;
+}
+
+.opening-balance-row:hover {
+  background: #fef3c7 !important;
+}
+
+.total-row {
+  background: var(--light-purple) !important;
+  font-weight: 700;
+}
+
+.total-row:hover {
+  background: var(--light-purple) !important;
+}
+
+.total-row td {
+  border-bottom: none;
+  padding: 16px 12px;
+}
+
+.invoice-last-row {
+  border-bottom: 3px solid var(--primary-purple) !important;
+}
+
+.invoice-last-row td {
+  border-bottom: 3px solid var(--primary-purple) !important;
+  padding-bottom: 16px !important;
+}
+
+.invoice-last-row + tr td {
+  padding-top: 16px !important;
+}
+
+@media (max-width: 768px) {
+  .daybook-card .card-body {
+    padding: 20px 15px;
+  }
+
+  .daybook-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .date-picker {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .daybook-table {
+    font-size: 13px;
+  }
+
+  .daybook-table thead th,
+  .daybook-table tbody td {
+    padding: 10px 8px;
+  }
+}
