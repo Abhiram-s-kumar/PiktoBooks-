@@ -12,8 +12,36 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+// CORS configuration - More permissive for debugging
+const corsOptions = {
+  origin: true, // Allow all origins for now
+  credentials: true,
+  optionsSuccessStatus: 200,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin']
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
+
+// Add additional CORS headers for preflight requests
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', req.headers.origin);
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin,X-Requested-With,Content-Type,Accept,Authorization');
+  
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(200);
+  } else {
+    next();
+  }
+});
+
+// Test route
+app.get('/', (req, res) => {
+  res.json({ message: 'PIKTOBOOKS API Server is running!' });
+});
 
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('MongoDB connected'))
